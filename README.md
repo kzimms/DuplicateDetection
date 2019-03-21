@@ -38,14 +38,27 @@ pip install {package name}
 ```
 
 
-### Installing
+### Running the Scripts
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+If you already have csv files of data that you wish to find duplicates in, skip to the next step. If your data is not saved in a HANA database, you will need to write your own script to either pull it into a pandas dataframe or save it to a csv and then start from the next step. 
+
+To pull in data from HANA and save it as a csv file, edit the top of Hana_query.py, save it, and run in the command line. The first four lines provide the necessary information to connect to the correct HANA server. The fifth line specifies a SQL query to run on the HANA server to create the desired datatable. The last two lines refer to your local machine and specify the folder and file name for the datatable to be saved. 
 
 ```
-Give the example
+######### ALL CHANGES IN THIS BLOCK ###########################
+HANAhost = "XX.XXX.XX.XXX"      # put host number in "quotes"
+HANAport = 30115                # keep port number as integer
+HANAuser = ""             # put username in "quotes"
+HANApassword = ""     # put password in "quotes"
+SQLquery = ""         # SQL query that would be used in HANA to access data
+masterData = ""         # Folder where the data will be saved
+fileName = ""           # base of the file name where pull will be saved
+###############################################################
+```
+```
+python Hana_query.py
 ```
 
 And repeat
