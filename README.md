@@ -8,15 +8,26 @@ The implementation of an unsupervised machine learning model allows duplicate de
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+This project was coded in Python 2.7 although, with minor modifications, could be run in Python 3.6. The below pre-requisites assume the user has a current version of pip installed. 
 
 ### Prerequisites
 
 Python 2.7
 
 ```
-Give examples
+Python --version
+2.7.15
 ```
+
+pip 
+
+```
+pip --version
+pip 9.0.3 from c:\python27\lib\site-packages (python 2.7)
+```
+pip will allow you to easily download all of the dependencies for this code base. pip should install when you download python. However, if it does not, follow the download directions here: https://packaging.python.org/tutorials/installing-packages/
 
 ### Installing
 
