@@ -1,6 +1,10 @@
-# Project Title
+# Duplicate Detection 
+### Via Data Similarity Mapping
 
-One Paragraph of project description goes here
+Due to poor and varied governance across heritage systems, master data was highly inconsistent within and across systems. Differences in encoding conventions complicate the use of out-of-the-box SAP tools for duplicate detection.
+
+The implementation of an unsupervised machine learning model allows duplicate detection without comprehensive (or any) data cleansing on data that may end up being culled or consolidated. This approach is effective for any application in which similar natural language data records need to be grouped together at varying levels of granularity. 
+
 
 ## Getting Started
 
@@ -8,7 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Python 2.7
 
 ```
 Give examples
@@ -32,30 +36,6 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Built With
 
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
@@ -72,16 +52,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Kathryn Zimmerman** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Deepak Nagarajan for his thoughts and insights as this solution came together. 
