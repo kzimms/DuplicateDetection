@@ -67,8 +67,8 @@ If the data you pulled in has multiple languages or is vastly different based on
 In the script, edit the following lines so the code points to the desired files.
 ```
 ######### ALL CHANGES IN THIS BLOCK ###########################
-filePath = "Customer"           # Folder name where files stored
-fileList = ["CSV_DCP_RE2_KNA1","CSV_PHI_RE1_KNA1"]   # List of file names without .csv ending that contain the data and need to be combined
+filePath = "FolderName"           # Folder name where files stored
+fileList = ["FileName1","FileName2"]   # List of file names without .csv ending that contain the data and need to be combined
 ###############################################################
 
 ```
