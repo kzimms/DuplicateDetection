@@ -13,8 +13,8 @@ import pandas as pd
 import numpy as np
 
 ######### ALL CHANGES IN THIS BLOCK ###########################
-filePath = "Customer"           # Folder name where files stored
-fileList = ["CSV_DCP_RE2_KNA1","CSV_PHI_RE1_KNA1"]   # List of file names without .csv ending that contain the data and need to be combined
+filePath = ""           # Folder name where files stored
+fileList = ["",""]   # List of file names without .csv ending that contain the data and need to be combined
 ###############################################################
 
 def segmentRegion(countries, df):
