@@ -29,6 +29,15 @@ pip 9.0.3 from c:\python27\lib\site-packages (python 2.7)
 ```
 pip will allow you to easily download all of the dependencies for this code base. pip should install when you download python. However, if it does not, follow the download directions here: https://packaging.python.org/tutorials/installing-packages/
 
+The packages and dependencies of this project are:
+NumPy, SciPy, Pandas, MatPlotLib, NLTK, PyHDB, scikit-learn
+
+If you do not have one of these installed please install via pip:
+```
+pip install {package name}
+```
+
+
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
