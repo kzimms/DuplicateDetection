@@ -5,6 +5,8 @@ Due to poor and varied governance across heritage systems, master data was highl
 
 The implementation of an unsupervised machine learning model allows duplicate detection without comprehensive (or any) data cleansing on data that may end up being culled or consolidated. This approach is effective for any application in which similar natural language data records need to be grouped together at varying levels of granularity. 
 
+This approach uses TF-IDF to pre-process natural language records and then clusters them via DBSCAN with cosine distance to find similar records at the specified levels of density (granularity).
+
 
 ## Getting Started
 
