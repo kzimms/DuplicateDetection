@@ -57,23 +57,70 @@ masterData = ""         # Folder where the data will be saved
 fileName = ""           # base of the file name where pull will be saved
 ###############################################################
 ```
+In the command line run:
 ```
 python Hana_query.py
 ```
 
-And repeat
+If the data you pulled in has multiple languages or is vastly different based on a single indicator (such as country code) run the below script. If not, skip to the next step. This script is tailored to HANA master basic datatables; however, small changes would make this script more generalizable. 
+
+In the script, edit the following lines so the code points to the desired files.
+```
+######### ALL CHANGES IN THIS BLOCK ###########################
+filePath = "Customer"           # Folder name where files stored
+fileList = ["CSV_DCP_RE2_KNA1","CSV_PHI_RE1_KNA1"]   # List of file names without .csv ending that contain the data and need to be combined
+###############################################################
 
 ```
-until finished
+In the command line run:
+```
+python createRegions.py
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+This step de-structures the rencords and runs TF-IDF on the result. The TF-IDF vectors are then run through DBSCAN clustering with cosine similarity distance measure. Cosine similarity was chosen to reduce errors due to the potential high dimensionality of the data. 
 
+Edit the top of the file as directed,
+
+```
+######### ALL CHANGES IN THIS BLOCK ###########################
+filePath = "Vendor"           # Folder name where files stored
+region = "NAmerica"             # Region from files created in createRegions.
+num_features = 500000           # max number of features to be created during TF-IDF. If this gets maxed out, increase it.
+epsilons = [0.05, 0.12,0.15]     # list of different levels of granularity for duplicates to be found. Lower the epsilon, the more similar returned results will be.
+###############################################################
+```
+If your desired file was not produced by createRegions.py, edit the below line of code:
+```
+df = pd.read_csv("../"+filePath+"/{YOUR FILE NAME}.csv", dtype='str', keep_default_na=False)
+
+```
+In the command line run:
+```
+python dedup.py
+```
+This will save two files in the specified folder. The first is the complete dataset with an additional column of cluster numbers for each value of epsilon. The second only contains records which were identified as 'non-unique'. For large datasets this makes manual review and point testing more manageable. 
+
+To make a comparison between two runs of clustering or between clustering results and SAP grouping results, you will need to edit the top of the file. This script was written with the assumption that the comparison would be between SAP grouping results and a clustering column result. If you would like to compare between two clustering columns, set the SAP variables to correspond to the desired cluster column. 
+```
+######### ALL CHANGES IN THIS BLOCK ###########################
+filePath = "" # folder where comparison file will be saved
+SAPfilepath = "../.csv" # relative file pathe where SAP genereted matched records are saved
+clusterFilepath = "../.csv" # relative filepath where the abbreviated clustered file is saved
+fullFilepath = "../.csv" # relative filepath where full clustered file is saved
+clusterColumn = "" # col name in the cluster file which contains desired clusters for comparison
+recIDColumn = "" # col name in the cluster file which contains unique recordID
+SAPrecIDColumn = "" #col name in SAP file which contains the recordID numbers
+SAPgroupColumn = "" # col name in SAP file which contains desired group numbers for comparison
+###############################################################
+```
+And run in the command line:
+```
+python compare.py
+```
+This will save a csv of the mismatched clusters.
 ## Authors
 
 * **Kathryn Zimmerman** 
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## Acknowledgments
 
