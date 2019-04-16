@@ -13,14 +13,14 @@ import numpy as np
 import clusterVerification
 
 ######### ALL CHANGES IN THIS BLOCK ###########################
-filePath = "" # folder where comparison file will be saved
-SAPfilepath = "../.csv" # relative file pathe where SAP genereted matched records are saved
-clusterFilepath = "../.csv" # relative filepath where the abbreviated clustered file is saved
-fullFilepath = "../.csv" # relative filepath where full clustered file is saved
-clusterColumn = "" # col name in the cluster file which contains desired clusters for comparison
-recIDColumn = "" # col name in the cluster file which contains unique recordID
-SAPrecIDColumn = "" #col name in SAP file which contains the recordID numbers
-SAPgroupColumn = "" # col name in SAP file which contains desired group numbers for comparison
+filePath = "Vendor" # folder where comparison file will be saved
+SAPfilepath = "../Vendor/DemoFile.csv" # relative file pathe where SAP genereted matched records are saved
+clusterFilepath = "../Vendor/NAmerica_ClustersOnly_Mapping.csv" # relative filepath where the abbreviated clustered file is saved
+fullFilepath = "../Vendor/NAmerica_Mapping4318_features.csv" # relative filepath where full clustered file is saved
+clusterColumn = "Eps: 0.01" # col name in the cluster file which contains desired clusters for comparison
+recIDColumn = "PK" # col name in the cluster file which contains unique recordID
+SAPrecIDColumn = "PK" #col name in SAP file which contains the recordID numbers
+SAPgroupColumn = "MATCH_GROUP_NUMBER" # col name in SAP file which contains desired group numbers for comparison
 ###############################################################
 
 misMatch = clusterVerification.verify2(fullFilepath,clusterFilepath,

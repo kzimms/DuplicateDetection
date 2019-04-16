@@ -50,7 +50,6 @@ def clusterDBSCAN(PCA, recID, epsilon):
 def DBSCAN(PCA, epsilon):
     from sklearn.cluster import DBSCAN
     cluster_ind = DBSCAN(eps=epsilon, min_samples=2, metric='cosine').fit_predict(PCA) + 1
-    #comparison file of assigned groups vs expected
     comp = np.transpose(np.asarray(cluster_ind))
     print "cluster: ",comp
     #np.savetxt("Clusters_Mapping.csv", comp, delimiter=",", fmt='%s')

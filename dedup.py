@@ -24,12 +24,12 @@ from sklearn.metrics.pairwise import cosine_similarity
 filePath = "Vendor"           # Folder name where files stored
 region = "NAmerica"             # Region from files created in createRegions.
 num_features = 500000           # max number of features to be created during TF-IDF. If this gets maxed out, increase it.
-epsilons = [0.05, 0.12,0.15]     # list of different levels of granularity for duplicates to be found. Lower the epsilon, the more similar returned results will be.
+epsilons = [0.01,0.03, 0.05, 0.1]     # list of different levels of granularity for duplicates to be found. Lower the epsilon, the more similar returned results will be.
 ###############################################################
 
 
 #df = pd.read_csv("../"+filePath+"/Combined_"+region+"_Test.csv", dtype='str', keep_default_na=False)
-df = pd.read_csv("../"+filePath+"/Test2.csv", dtype='str', keep_default_na=False)
+df = pd.read_csv("../"+filePath+"/DemoFile.csv", dtype='str', keep_default_na=False)
 print(df.head(5))
 
 data = df.to_numpy()
