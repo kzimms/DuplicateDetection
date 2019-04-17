@@ -60,7 +60,7 @@ def index(df, tfidf, epsilon):
 
 """
 inputs: 
-    [df] : pd dataframe of records
+    [df] : pd dataframe of records containing the column names in col_to_func
 returns:
     A feature matrix where each row corresponds to a pair of records from df, 
     the last column contains labels
